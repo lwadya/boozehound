@@ -1,0 +1,72 @@
+<link rel="stylesheet"
+  href="{{ url_for('static', filename='stylesheets/index.css') }}">
+
+<div class="page">
+
+<div class="title">
+  <h1>Drink Recommender</h1>
+</div>
+
+<div class="form">
+  <form action="/" method='POST'>
+    {% if last_search %}
+      <input class="form_text" type="text" name="search"
+        value="{{ last_search }}" placeholder="Search for drinks or flavors...">
+    {% else %}
+      <input class="form_text" type="text" name="search"
+        placeholder="Search for drinks or flavors...">
+    {% endif %}
+    <input type="submit" method="get" style="display:none">
+    <table class="table_slider">
+      <tr>
+        <th class="text_slider">Play It Safe</th>
+        <th class="cell_slider">
+          {% if last_weird %}
+            <input type="range" min="0" max="100" value="{{ last_weird }}"
+              name="weird" class="form_slider">
+          {% else %}
+            <input type="range" min="0" max="100" value="50" name="weird"
+              class="form_slider">
+          {% endif %}
+        </th>
+        <th class="text_slider">Get Weird</th>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div class="results">
+  {% if recos %}
+    <table class="table">
+    {% for reco in recos %}
+      <tr class="table_row">
+        <th class="table_name">
+          <div class="div_name">
+            <a href="{{ reco.url }}" target="_blank" class="link_name">
+              {{ reco.name }}
+            </a>
+          </div>
+        </th>
+        <th class="table_image">
+          <a href="{{ reco.url }}" target="_blank">
+            <img src="{{ reco.image }}" class="reco_image">
+          </a>
+        </th>
+        <th class="table_ingredient">
+          <ul>
+            {% for ingredient in reco.ingredients %}
+              <li>{{ ingredient }}</li>
+            {% endfor %}
+          </ul>
+        </th>
+      </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    {% if last_search %}
+      Sorry, I couldn't find anything with those search terms :(
+    {% endif %}
+  {% endif %}
+</div>
+
+</div>
