@@ -124,3 +124,8 @@ a:hover, a:active {
 .div_name {
   display: inline-block;
 }
+
+.failure {
+  font-size: 1.2em;
+  font-weight: 500;
+}
