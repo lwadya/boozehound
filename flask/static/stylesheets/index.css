@@ -1,4 +1,4 @@
-.page {
+body {
   text-align: center;
   margin: auto;
   width: 65%;
@@ -48,13 +48,6 @@
   width: 100%;
 }
 
-.reco_image {
-  display: block;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .results {
   padding-top: 2em;
 }
@@ -91,6 +84,13 @@
   width: auto;
 }
 
+.reco_image {
+  display: block;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 ul {
   list-style-type: circle;
   overflow: hidden;
@@ -102,12 +102,6 @@ a:link, a:visited {
   text-decoration: none;
   color: inherit;
 }
-
-/*
-a:hover, a:active {
-  background-color: #f7e8f4;
-}
-*/
 
 .link_name {
   font-size: 1.2em;
@@ -123,6 +117,17 @@ a:hover, a:active {
 
 .div_name {
   display: inline-block;
+}
+
+.link_back {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.3em;
+  letter-spacing: .15em;
+  margin-top: 3em;
+  display: inline-block;
+  padding: .7em;
+  border: .07em solid #777;
 }
 
 .failure {

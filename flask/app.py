@@ -1,40 +1,41 @@
-# Flask imports
-from flask import Flask
-from flask import request, render_template
-from random import randint
+import sys
+import os
+from flask import Flask, request, render_template
 
-# Recommender imports
-import pickle
-
+code_dir = os.path.join(os.path.dirname(sys.path[0]), 'code')
+sys.path.append(code_dir)
+from lw_pickle import read_pickle
 from cocktail_recommender import cocktail_recommender
 
-# Load model from pickle
+# Loads model from pickle file
 reco_pk = '../data/reco.pk'
-with open(reco_pk, 'rb') as f:
-    cr = pickle.load(f)
+cr = read_pickle(reco_pk)
 
 app = Flask(__name__)
 
 
 @app.route("/", methods=["POST", "GET"])
-def user_form():
+def index():
+    '''
+    Gathers input from user and displays results using a Flask HTML template
+
+    Args:
+        None
+
+    Returns:
+        None
+    '''
     if request.method == 'POST':
+
+        # Collects user input and uses it to get recommendations
         search = request.form.get('search')
         weirdness = float(request.form.get('weird'))
         status, df = cr.recommend(search, weirdness=weirdness/100)
 
+        # True status means the recommender returns data
         if status:
             recos = (df[['name', 'image', 'ingredients', 'url']]
                      .to_dict(orient='records'))
-            '''
-            # Format ingredients list
-            max_ingr = 5
-            for x in recos:
-                num_ingr = len(x['ingredients'])
-                x['ingredients'] = x['ingredients'][:max_ingr]
-                if num_ingr > max_ingr:
-                    x['ingredients'][-1] = '...'
-            '''
         else:
             recos = None
     else:
