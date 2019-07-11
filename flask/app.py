@@ -2,13 +2,13 @@ import sys
 import os
 from flask import Flask, request, render_template
 
-code_dir = os.path.join(os.path.dirname(sys.path[0]), 'code')
-sys.path.append(code_dir)
+root_dir = os.path.dirname(sys.path[0])
+sys.path.append(os.path.join(root_dir, 'code'))
 from lw_pickle import read_pickle
 from cocktail_recommender import cocktail_recommender
 
 # Loads model from pickle file
-reco_pk = '../data/reco.pk'
+reco_pk = os.path.join(root_dir, 'data/reco.pk')
 cr = read_pickle(reco_pk)
 
 app = Flask(__name__)
