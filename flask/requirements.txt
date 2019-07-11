@@ -1,4 +1,5 @@
 Flask==1.0.3
+Frozen-Flask==0.15
 numpy==1.16.4
 pandas==0.24.2
 scikit-learn==0.20.3
