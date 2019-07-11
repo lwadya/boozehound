@@ -47,4 +47,4 @@ def index():
                            last_weird=str(weirdness))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
