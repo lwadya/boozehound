@@ -5,10 +5,10 @@
     <title>Boozehound Cocktail Recommender</title>
     <link rel="stylesheet"
       href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    <a name="top"></a>
   </head>
-  <a name="top"></a>
-  <body>
 
+  <body>
     <div class="title">
       <img src="/static/img/logo.png" class="image_title">
     </div>
@@ -79,5 +79,21 @@
       {% endif %}
     </div>
 
+    <div class="footer">
+      <p>All cocktail recipes and images are from
+        <a href="https://www.thespruceeats.com" target="_blank">
+          The Spruce Eats
+        </a>
+      </p>
+      <p>
+        App functionality and design by Lukas Wadya:
+        <a href="https://www.wadya.com" target="_blank">Blog</a> |
+        <a href="https://www.linkedin.com/in/lukaswadya/" target="_blank">
+          LinkedIn
+        </a> | 
+        <a href="https://github.com/lwadya" target="_blank">GitHub</a>
+      </p>
+    </div>
   </body>
+
 </html>

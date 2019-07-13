@@ -122,7 +122,6 @@ a:link, a:visited {
 .link_back {
   font-size: 1em;
   font-weight: 300;
-  line-height: 1.3em;
   letter-spacing: .15em;
   margin-top: 3em;
   display: inline-block;
@@ -133,4 +132,15 @@ a:link, a:visited {
 .failure {
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.footer{
+  margin-top: 4em;
+  color: #555;
+  font-size: .85em;
+  font-weight: 300;
+}
+
+.footer a{
+  color: #000;
 }
