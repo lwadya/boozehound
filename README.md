@@ -26,6 +26,8 @@ The image below gives an example of how both models work. Drink and spirit names
 
 [Boozehound is up and running on Heroku](https://lw-boozehound.herokuapp.com/): feel free to give it a try. I built the app in **Flask** and wanted a simple, clean aesthetic reminiscent of a classy cocktail bar. As a result I spent just as much time using **CSS** to stylize content as I did just getting the app to work properly. Luckily I enjoy design and layout so it was a real pleasure seeing everything slowly come together. My Metis instructors would often bring up the idea of *completing the story* and to me this project would have been incomplete without a concise and visually-pleasing presentation of recipe recommendations.
 
+![Picture of the Boozehound app](img/app.jpg)
+
 ### Conclusions
 
 While I am pleased with the final product I presented in class at Metis, there's a lot I still want to address with the Boozehound app. Some of the searches I tested returned odd results that could be improved upon. I'd also like to add some UX improvements like helpful feature descriptions and some initial search suggestions for users who don't know what they want. Another planned feature is a one-click search button to allow the user to find recipes similar to a drink that shows up as a recommendation without having to type it into the search bar. Boozehound is all about exploration and I want to make rifling through a bunch of new recipes as easy as possible.
