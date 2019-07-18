@@ -14,10 +14,16 @@ body {
   max-width: 80%;
   max-height: 80%;
   padding-top: 5em;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  text-align: center;
 }
 
 .form_text {
-  width: 100%;
+  width: 95%;
   font-size: 1.1em;
   font-weight: 300;
   letter-spacing: .04em;
@@ -116,6 +122,10 @@ a:link, a:visited {
 
 .div_name {
   display: inline-block;
+}
+
+hr {
+  margin-top: 1em;
 }
 
 .link_back {

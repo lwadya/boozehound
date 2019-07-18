@@ -5,6 +5,8 @@
     <title>Boozehound Cocktail Recommender</title>
     <link rel="stylesheet"
       href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    <link rel="shortcut icon"
+      href="/static/img/favicon.ico">
   </head>
 
   <body>
@@ -69,6 +71,8 @@
           </tr>
         {% endfor %}
         </table>
+
+        <hr>
 
         <a href="#top" class="link_back">Back to Top</a>
       {% else %}
